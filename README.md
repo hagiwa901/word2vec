@@ -20,6 +20,11 @@ docker-compose up mecab_ipadic_tokenizer
 rye run train-script
 ```
 
+## 予測
+```
+rye run predict-script
+```
+
 # モジュール
 ## インストール
 ```
