@@ -5,7 +5,9 @@ description = "Add your description here"
 authors = [
     { name = "hagiwa901", email = "kedama4156991@gmail.com" }
 ]
-dependencies = []
+dependencies = [
+    "gensim>=4.3.1",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
