@@ -1,0 +1,7 @@
+version: "3"
+services:
+    mecab_ipadic_tokenizer:
+        container_name: mecab_ipadic
+        build: './mecab_ipadic'
+        tty: true
+        command: /bin/bash

@@ -6,6 +6,13 @@ word2vecの事前学習 ~ テストまでのコード
 - python：3.8.9
   - gensim：4.3.1
 
+- Docker：20.10.0
+
+# 実行方法
+## 前処理
+```
+docker-compose build mecab_ipadic
+```
 # モジュール
 ## インストール
 ```
