@@ -7,6 +7,7 @@ authors = [
 ]
 dependencies = [
     "gensim>=4.3.1",
+    "pylint>=2.17.5",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
