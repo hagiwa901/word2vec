@@ -23,8 +23,6 @@ dev-dependencies = []
 [tool.hatch.metadata]
 allow-direct-references = true
 
-[project.scripts]
-my-hello-script = "word2vec:hello"
-
 [tool.rye.scripts]
 train-script = { call =  "word2vec:train('dataset/wakati.txt', 'model/w2v.model')" }
+predict-script = { call =  "word2vec:predict('model/w2v.model', '今日')" }
