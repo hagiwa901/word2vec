@@ -11,7 +11,8 @@ word2vecの事前学習 ~ テストまでのコード
 # 実行方法
 ## 前処理
 ```
-docker-compose build mecab_ipadic
+docker-compose build mecab_ipadic_tokenizer
+docker-compose up mecab_ipadic_tokenizer
 ```
 # モジュール
 ## インストール
