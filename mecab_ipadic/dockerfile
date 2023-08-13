@@ -2,6 +2,3 @@ FROM ubuntu:20.04 as build-env
 RUN apt-get update --allow-releaseinfo-change
 RUN apt-get upgrade
 RUN apt-get install -y mecab libmecab-dev mecab-ipadic
-
-FROM gcr.io/distroless/cc-debian11:latest
-COPY --from=build-env /usr/ /
