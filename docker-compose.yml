@@ -3,5 +3,6 @@ services:
     mecab_ipadic_tokenizer:
         container_name: mecab_ipadic
         build: './mecab_ipadic'
-        tty: true
-        command: /bin/bash
+        volumes:
+            - .${DATASET_DIR}:${DATASET_DIR}
+        command: mecab -O wakati ${DATASET_DIR}/${INPUT_TEXT} -o ${DATASET_DIR}/${OUTPUT_TEXT}
