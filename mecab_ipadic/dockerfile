@@ -10,8 +10,7 @@ WORKDIR ${MECAB_VERSION}/
 RUN ./configure --with-charset=utf8
 RUN make
 RUN make install
-RUN echo "/usr/local/lib/libmecab.so.2" >> /etc/ld.so.conf
-RUN ldconfig
+RUN cp /usr/local/lib/libmecab.so.2 /lib/libmecab.so.2
 WORKDIR /
 RUN wget ${MECAB_DIC_URL} -O ${MECAB_DIC_VERSION}.tar.gz
 RUN tar -xvf ${MECAB_DIC_VERSION}.tar.gz

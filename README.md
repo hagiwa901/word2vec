@@ -12,6 +12,16 @@ word2vecの前処理 ~ 予測までのコード
 
 # 実行方法
 ## 前処理
+### データセット
+https://qiita.com/kenta1984/items/93b64768494f971edf86
+上の記事を参考に日本語のWikipediaをダウンロードする。
+
+1. [こちら](https://dumps.wikimedia.org/jawiki/latest/)から[jawiki-latest-pages-articles.xml.bz2](https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2)をダウンロード  
+1. 1でダウンロードしたデータを`dataset/`の直下に置く
+1. [こちらのページ](https://github.com/attardi/wikiextractor)を参考にwikipediaの記事を取得
+```
+rye run wiki-extract
+```
 ### 分かち書き
 形態素解析器はMeCab+IPA辞書  
 #### 実行

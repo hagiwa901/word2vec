@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "gensim>=4.3.1",
     "pylint>=2.17.5",
+    "wikiextractor>=3.0.6",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -24,5 +25,7 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.rye.scripts]
-train-script = { call =  "word2vec:train('dataset/wakati.txt', 'model/w2v.model')" }
-predict-script = { call =  "word2vec:predict('model/w2v.model', '今日')" }
+wiki-extract = { cmd = ["python", "-m", "wikiextractor.WikiExtractor", "dataset/jawiki-latest-pages-articles.xml.bz2", "-o", "dataset/"] }
+wiki-corpus = { cmd = "find dataset | grep wiki | awk '{system(\"cat \"$0\" >> dataset/wiki.txt\")}'" }
+train-script = { call =  "train:main('dataset/wakati.txt', 'model/w2v.model')" }
+predict-script = { call =  "word2vec:predict('model/w2v.model', '便利')" }
