@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def main(text_file:str, model_path: str) -> None:
+def main(text_file: str, model_path: str) -> None:
     logging.info("train start")
     with open(text_file) as f:
         sentences = [s.rstrip().split() for s in f.readlines()]

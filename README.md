@@ -3,6 +3,8 @@
 word2vecの前処理 ~ 予測までのコード
 
 ## 環境
+- Mac
+
 - python：3.8.9
   - gensim：4.3.1
 
@@ -17,10 +19,16 @@ https://qiita.com/kenta1984/items/93b64768494f971edf86
 上の記事を参考に日本語のWikipediaをダウンロードする。
 
 1. [こちら](https://dumps.wikimedia.org/jawiki/latest/)から[jawiki-latest-pages-articles.xml.bz2](https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2)をダウンロード  
-1. 1でダウンロードしたデータを`dataset/`の直下に置く
-1. [こちらのページ](https://github.com/attardi/wikiextractor)を参考にwikipediaの記事を取得
+```
+rye run download-wiki
+```
+2. [こちらのページ](https://github.com/attardi/wikiextractor)を参考にwikipediaの記事を取得
 ```
 rye run wiki-extract
+```
+3. wikipediaの記事をテキストファイルに保存
+```
+rye run make-wiki-corpus
 ```
 ### 分かち書き
 形態素解析器はMeCab+IPA辞書  
@@ -30,9 +38,9 @@ docker-compose build mecab_ipadic_tokenizer
 docker-compose run mecab_ipadic_tokenizer
 ```
 #### 実行結果
-デフォルトの設定では`dataset/`直下に`text.txt`を作成して、1行ごとに1文を記述。
+デフォルトの設定では`dataset/wiki.txt`を1行ごとに1文を記述。
 
-text.txt
+wiki.txt
 ```
 すもももももももものうち
 今日もしないとね。
