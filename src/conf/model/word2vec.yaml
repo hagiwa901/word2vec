@@ -1,0 +1,5 @@
+word2vec:
+  min_count: 1
+  vector_size: 100
+  window: 3
+  workers: 5
