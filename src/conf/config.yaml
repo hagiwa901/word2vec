@@ -1,5 +1,6 @@
-default:
-  - word2vec: word2vec
+defaults:
+  - model: word2vec
+  - predict: similar
 
 config:
   text_file: dataset/wakati.txt

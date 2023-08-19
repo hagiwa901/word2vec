@@ -1,3 +1,4 @@
 model/*
 dataset/*
 .DS_store
+outputs/*
