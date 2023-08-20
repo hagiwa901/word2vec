@@ -1,2 +1,4 @@
+# @package _global_
 similar:
   word: "天気"
+  topn: 10

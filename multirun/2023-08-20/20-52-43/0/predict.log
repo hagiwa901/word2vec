@@ -1,0 +1,29 @@
+[2023-08-20 20:52:44,002][root][INFO] - predict start
+[2023-08-20 20:52:44,003][root][INFO] - model:
+  word2vec:
+    min_count: 1
+    vector_size: 100
+    window: 3
+    workers: 5
+predict:
+  similar:
+    word: 天気
+    topn: 10
+  hydra:
+    sweeper:
+      params:
+        similar.word:
+        - 天気
+        - 晴れ
+        similar.topn: 10
+config:
+  text_file: dataset/wakati.txt
+  model_path: model/w2v.model
+
+[2023-08-20 20:52:44,004][gensim.utils][INFO] - loading Word2Vec object from model/w2v.model
+[2023-08-20 20:52:44,899][gensim.utils][INFO] - loading wv recursively from model/w2v.model.wv.* with mmap=None
+[2023-08-20 20:52:44,899][gensim.utils][INFO] - loading vectors from model/w2v.model.wv.vectors.npy with mmap=None
+[2023-08-20 20:52:45,301][gensim.utils][INFO] - loading syn1neg from model/w2v.model.syn1neg.npy with mmap=None
+[2023-08-20 20:52:45,686][gensim.utils][INFO] - setting ignored attribute cum_table to None
+[2023-08-20 20:52:58,123][gensim.utils][INFO] - Word2Vec lifecycle event {'fname': 'model/w2v.model', 'datetime': '2023-08-20T20:52:58.098940', 'gensim': '4.3.1', 'python': '3.8.9 (default, Apr 15 2021, 00:08:37) \n[Clang 11.1.0 ]', 'platform': 'macOS-10.15.7-x86_64-i386-64bit', 'event': 'loaded'}
+[2023-08-20 20:52:58,763][root][INFO] - predict done
