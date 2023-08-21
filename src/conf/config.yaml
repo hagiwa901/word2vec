@@ -1,14 +1,9 @@
 defaults:
   - model: word2vec
-  - predict: ???
-  - _self_
+  - predict: similar
 
 config:
   text_file: dataset/wakati.txt
   model_path: model/w2v.model
-
-hydra:
-  sweeper:
-    params:
-      similar.word: ["天気","晴れ"]
-      similar.topn: 10
+  dir_root_path: dataset/wikitext
+  save_text: dataset/wiki.txt

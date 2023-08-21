@@ -28,13 +28,13 @@ allow-direct-references = true
 
 [project.scripts]
 predict-script = 'predict:main'
+make-wiki-corpus = 'make_wiki_corpus:main'
 
 [tool.rye.scripts]
 download-wiki = { cmd = ["curl", "https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2", "-o", "dataset/jawiki-latest-pages-articles.xml.bz2"] }
 wiki-extract = { cmd = ["python", "-m", "wikiextractor.WikiExtractor", "dataset/jawiki-latest-pages-articles.xml.bz2", "-o", "dataset/wikitext"] }
-make-wiki-corpus = { call = "make_wiki_corpus:main('dataset/wikitext', 'dataset/wiki.txt')" }
 build-docker-mecab-ipadic = { cmd = ["docker-compose", "build", "mecab_ipadic_tokenizer"] }
 run-docker-mecab-ipadic = { cmd = ["docker-compose", "run", "mecab_ipadic_tokenizer"] }
 down-docker-container = { cmd = ["docker-compose", "down", "-v"] }
 train-script = { cmd = ["python", "src/train.py"] }
-predict = { cmd = ["python", "src/predict.py", "--multirun"] }
+predict = { cmd = ["python", "src/predict.py", "--multirun", "+similar_words=grid_search"] }
