@@ -34,26 +34,26 @@ rye run make-wiki-corpus
 形態素解析器はMeCab+IPA辞書  
 #### 実行
 ```
-docker-compose build mecab_ipadic_tokenizer
-docker-compose run mecab_ipadic_tokenizer
+rye run build-docker-mecab-ipadic
+rye run run-docker-mecab-ipadic
 ```
 #### 実行結果
 デフォルトの設定では`dataset/wiki.txt`を1行ごとに1文を記述。
 
 wiki.txt
 ```
-すもももももももものうち
-今日もしないとね。
-MeCabは便利です。
+斎藤和義
+ユーリー・クラスノジャン
+ユーリー・アナトーリエヴィチ・クラスノジャン（、1963年6月7日 - ）は、ロシアの元サッカー選手、サッカー指導者。現役時代のポジションはDF/MF。
 ```
 
 デフォルトの設定では`dataset/`直下に`wakati.txt`を作成して、1行ごとに単語分割された1文を出力。
 
 wakati.txt
 ```
-すもも も もも も もも の うち 
-今日 も し ない と ね 。 
-MeCab は 便利 です 。 
+斎藤 和義 
+ユーリー ・ クラス ノ ジャン 
+ユーリー ・ アナトーリエヴィチ・クラスノジャン （ 、 1963 年 6 月 7 日 - ） は 、 ロシア の 元 サッカー 選手 、 サッカー 指導 者 。 現役 時代 の ポジション は DF / MF 。 
 ```
 
 テキストファイル名を変更したい場合は`.env`を編集。  
@@ -61,7 +61,7 @@ MeCab は 便利 です 。
 分かち書きした後のファイル名の出力結果を`OUTPUT_TEXT`に代入。  
 #### 後処理
 ```
-docker-compose down -v
+rye run down-docker-container
 ```
 
 ## 学習

@@ -3,3 +3,4 @@ word2vec:
   vector_size: 100
   window: 3
   workers: 5
+  epochs: 5
