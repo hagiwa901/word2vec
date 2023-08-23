@@ -80,6 +80,11 @@ rye run predict-script
 rye add [モジュール名]
 ```
 
+## アンインストール
+```
+rye remove [モジュール名]
+```
+
 ## ロックファイルの作成
 ```
 rye sync
