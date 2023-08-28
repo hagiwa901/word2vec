@@ -6,7 +6,6 @@ word2vecの前処理 ~ 予測までのコード
 - Mac
 
 - python：3.8.9
-  - gensim：4.3.1
 
 - Docker：20.10.0
 

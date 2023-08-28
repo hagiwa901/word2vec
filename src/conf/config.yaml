@@ -4,6 +4,6 @@ defaults:
 
 config:
   text_file: dataset/wakati.txt
-  model_path: model/w2v.model
+  model_path: model/w2v_wiki.model
   dir_root_path: dataset/wikitext
   save_text: dataset/wiki.txt
